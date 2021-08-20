@@ -13,67 +13,27 @@ void Main()
     MooseSays("I really am enthusiastic");
 
     // Ask a question:
-    CanadaQuestion();
-    EnthusiasticQuestion();
-    LoveCSharpQuestion();
-    SecretQuestion();
+    AskQuestion("Is Canada real?", "Really? It seems very unlikely.", "I  K N E W  I T !!!");
+    AskQuestion("Are you enthusiastic?", "Yay!", "You should try it!");
+    AskQuestion("Do you love C# yet?", "Good job sucking up to your instructor!", "You will...oh, yes, you will...");
+    AskQuestion("Do you want to know a secret?", "ME TOO!!!! I love secrets...tell me one!", "Oh, no...secrets are the best, I love to share them!");
 }
-
 
 // void does not return anything:
-void CanadaQuestion()
+// AskQuestion() method accepts 3 parameters and uses string interpolation to display the question to the CLI:
+void AskQuestion(string question, string yesResponse, string noResponse)
 {
-    bool isTrue = MooseAsks("Is Canada real?");
+    bool isAnswered = MooseAsks($"{question} (Y/N): ");
     // Moose will say something based on the user's response to the question:
-    if (isTrue)
+    if (isAnswered)
     {
-        MooseSays("Really? It seems very unlikely.");
+        MooseSays(yesResponse);
     }
     else
     {
-        MooseSays("I  K N E W  I T !!!");
+        MooseSays(noResponse);
     }
 }
-
-void EnthusiasticQuestion()
-{
-    bool isEnthusiastic = MooseAsks("Are you enthusiastic?");
-    if (isEnthusiastic)
-    {
-        MooseSays("Yay!");
-    }
-    else
-    {
-        MooseSays("You should try it!");
-    }
-}
-
-void LoveCSharpQuestion()
-{
-    bool doesLoveCSharp = MooseAsks("Do you love C# yet?");
-    if (doesLoveCSharp)
-    {
-        MooseSays("Good job sucking up to your instructor!");
-    }
-    else
-    {
-        MooseSays("You will...oh, yes, you will...");
-    }
-}
-
-void SecretQuestion()
-{
-    bool wantsSecret = MooseAsks("Do you want to know a secret?");
-    if (wantsSecret)
-    {
-        MooseSays("ME TOO!!!! I love secrets...tell me one!");
-    }
-    else
-    {
-        MooseSays("Oh, no...secrets are the best, I love to share them!");
-    }
-}
-
 
 
 // adding an @ in front of the string allows for a multi-line string:
