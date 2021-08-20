@@ -9,8 +9,16 @@ MooseSays("H I, I'M  E N T H U S I A S T I C !");
 MooseSays("I really am enthusiastic");
 
 // Ask a question:
-bool isTrue = MooseAsks("Is Canada real?"); // store the result of invoking MooseAsks() method/function into a boolean data type variable isTrue and print to the console:
-Console.WriteLine(isTrue);
+bool isTrue = MooseAsks("Is Canada real?");
+// Moose will say something based on the user's response to the question:
+if (isTrue)
+{
+    MooseSays("Really? It seems very unlikely.");
+}
+else
+{
+    MooseSays("I  K N E W  I T !!!");
+}
 
 
 // adding an @ in front of the string allows for a multi-line string:
